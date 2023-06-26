@@ -1,8 +1,8 @@
 -- crear las TABLES
 
 USE eje_SQL;
--- Creación de la tabla de lines
-CREATE TABLE `lines`(
+-- Creación de la tabla de lineas
+CREATE TABLE `lineas`(
     `id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 
     `name` VARCHAR(10) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `trains` (
 
     PRIMARY KEY (serial_number),
     CONSTRAINT `trains_line_id_foreign` 
-    FOREIGN KEY (`line_id`) REFERENCES `lines` (`id`) --la columna que se va a relacionar es line-id referenciada en la tabla lines de la columna id.
+    FOREIGN KEY (`line_id`) REFERENCES `lineas` (`id`) --la columna que se va a relacionar es line-id referenciada en la tabla lines de la columna id.
 ) 
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_unicode_ci;
