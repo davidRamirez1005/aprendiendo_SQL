@@ -1,6 +1,19 @@
 ## Definiciones:
 
+eje:
 
+-- Crear la tabla "pais"
+CREATE TABLE pais (
+  id INT PRIMARY KEY,
+  nombrePais VARCHAR(50)
+);
+
+-- Crear la tabla "departamento" con la llave foránea
+CREATE TABLE departamento (
+  idDep INT PRIMARY KEY,
+  idPais INT,
+  FOREIGN KEY (idPais) REFERENCES pais(id)
+);
 
 ```sql
 `CREATE TABLE`: Inicia la declaración para crear una nueva tabla en la base de datos.
@@ -92,3 +105,4 @@ ADD PRIMARY KEY(id): Agrega una restricción de clave primaria a la columna `id`
 1. **`DROP USER username;`**: Elimina un usuario de la base de datos. Reemplaza `username` por el nombre del usuario que deseas eliminar.
 2. **`DROP TABLE table_name;`**: Elimina una tabla de la base de datos. Reemplaza `table_name` por el nombre de la tabla que deseas eliminar.
 3. **`GRANT privileges ON database_name.table_name TO 'username'@'host';`**: Concede privilegios específicos a un usuario en una base de datos y tabla específicas. Reemplaza `privileges` con los privilegios que deseas otorgar (por ejemplo, SELECT, INSERT, UPDATE, DELETE, etc.), `database_name` con el nombre de la base de datos, `table_name` con el nombre de la tabla, `username` con el nombre de usuario y `host` con la ubicación del host (por ejemplo, 'localhost', '127.0.0.1', etc.).  para una tabla en especifico => database_name.table_name. para todas las tablas => *.*
+
